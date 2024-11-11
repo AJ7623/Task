@@ -1,0 +1,11 @@
+[bastion]
+bastion 
+
+[workstation]
+workstation 
+
+[servers]
+servera 
+serverb 
+serverc 
+serverd 
