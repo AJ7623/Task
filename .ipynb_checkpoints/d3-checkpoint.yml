@@ -1,0 +1,49 @@
+---
+- name: ansible tasks
+  hosts: workstation  
+  become: true
+  vars:
+    source_folder_path: "/home/student/temp"  
+    dest_folder: "/home/student/"  
+
+  tasks:
+  
+    - block:
+        - name: creating temporary directory on workstation
+          ansible.builtin.file:
+            path: "{{ dest_folder }}"
+            state: directory
+        - name: listing files in the source folder on bastion
+          ansible.builtin.command:
+            cmd: "ls {{ source_folder_path }}"
+          delegate_to: bastion
+          register: file_list
+        - name: fetching files from bastion to workstation
+          ansible.builtin.fetch:
+            src: "{{ source_folder_path }}/{{ item }}"
+            dest: "{{ dest_folder }}/"  
+            flat: true  
+          loop: "{{ file_list.stdout_lines }}"
+          delegate_to: bastion
+      rescue:
+        - name: error
+          ansible.builtin.fail:
+            msg: "one or more tasks in the block fail"
+
+    - block:
+        - name: uploading files to all servers
+          ansible.builtin.copy:
+            src: "{{ dest_folder }}/{{ item }}"
+            dest: "/home/student/{{ item }}"
+            force: yes  
+          delegate_to: "{{ server }}"
+          loop: "{{ groups['servers'] | product(file_list.stdout_lines) | map('flatten') }}"
+          loop_control:
+            loop_var: "server_file"
+          vars:
+            server: "{{ server_file.0 }}"
+            item: "{{ server_file.1 }}"
+      rescue:
+        - name: uploading files failed
+          ansible.builtin.fail:
+            msg: "Failed to upload files to servers"
