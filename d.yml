@@ -1,6 +1,6 @@
 ---
 - name: ansible tasks
-  hosts: workstation  
+  hosts: all  
   become: true
   vars:
     source_folder_path: "/home/student/temp"  
