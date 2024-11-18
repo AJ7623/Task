@@ -1,49 +1,83 @@
 ---
 - name: ansible tasks
-  hosts: workstation  
+  hosts: workstation
   become: true
   vars:
-    source_folder_path: "/home/student/temp"  
-    dest_folder: "/home/student/"  
+    source_folder_absolute_path: "/home/student/temp"
+    dest_folder: "/home/student/"
+    file_pattern: "*.txt"  
 
   tasks:
-  
+
     - block:
         - name: creating temporary directory on workstation
           ansible.builtin.file:
             path: "{{ dest_folder }}"
             state: directory
+
+        - name: checking if source directory exists
+          ansible.builtin.stat:
+            path: "{{ source_folder_absolute_path }}"
+          delegate_to: bastion
+          register: source_dir
+
+        - name: fail if source directory does not exist
+          ansible.builtin.fail:
+            msg: "Error: - Source Directory {{ source_folder_absolute_path }} on the endpoint is missing"
+          when: not source_dir.stat.exists
+
         - name: listing files in the source folder on bastion
           ansible.builtin.command:
-            cmd: "ls {{ source_folder_path }}"
+            cmd: "ls {{ source_folder_absolute_path }}/{{ file_pattern }}"
           delegate_to: bastion
           register: file_list
+          changed_when: false
+
+        - name: fail if no files match the pattern
+          ansible.builtin.fail:
+            msg: "Error: - No files found in the source directory {{ source_folder_absolute_path }}"
+          when: file_list.stdout_lines | length == 0
+
         - name: fetching files from bastion to workstation
           ansible.builtin.fetch:
-            src: "{{ source_folder_path }}/{{ item }}"
-            dest: "{{ dest_folder }}/"  
-            flat: true  
+            src: "{{ source_folder_absolute_path }}/{{ item }}"
+            dest: "{{ dest_folder }}/"
+            flat: true
           loop: "{{ file_list.stdout_lines }}"
           delegate_to: bastion
+
       rescue:
-        - name: error
-          ansible.builtin.fail:
-            msg: "one or more tasks in the block fail"
+        - name: RC in case of failure
+          ansible.builtin.include_role:
+            name: returncode
+          vars:
+            rc_support: account
+            rc_group: framework_playbook
+            rc_number: "{{ ansible_failed_result.rc | default('2200') }}"
+            rc_message: "Error: - {{ ansible_failed_result.msg | d('Source Directory on the endpoint is missing') }}"
 
     - block:
         - name: uploading files to all servers
           ansible.builtin.copy:
             src: "{{ dest_folder }}/{{ item }}"
             dest: "/home/student/{{ item }}"
-            force: yes  
+            force: yes
           delegate_to: "{{ server }}"
-          loop: "{{ groups['servers'] | product(file_list.stdout_lines) | map('flatten') }}"
+          loop: "{{ groups['servers'] | product(file_list.stdout_lines) }}"
           loop_control:
             loop_var: "server_file"
           vars:
             server: "{{ server_file.0 }}"
             item: "{{ server_file.1 }}"
+
       rescue:
-        - name: uploading files failed
-          ansible.builtin.fail:
-            msg: "Failed to upload files to servers"
+        - name: RC in case of failure
+          ansible.builtin.include_role:
+            name: returncode
+          vars:
+            rc_support: account
+            rc_group: framework_playbook
+            rc_number: "{{ ansible_failed_result.rc | default('2200') }}"
+            rc_message: "Error: - {{ ansible_failed_result.msg | d('Source Directory on the endpoint is missing') }}"
+
+    

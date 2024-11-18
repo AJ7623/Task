@@ -6,9 +6,9 @@
             "pattern": "workstation",
             "play": "ansible tasks",
             "play_pattern": "workstation",
-            "play_uuid": "da0a755c-8f6f-ac24-ef81-00000000000b",
+            "play_uuid": "b6e6f803-5365-1704-10a6-00000000000b",
             "playbook": "/home/student/task/d2.yml",
-            "playbook_uuid": "066d2742-8a7d-425b-b2d1-96a484c1e34b",
+            "playbook_uuid": "bfc487b0-6926-44eb-b3e5-60e433fd1acf",
             "tasks": [
                 {
                     "__changed": false,
@@ -18,28 +18,28 @@
                     "__result": "Ok",
                     "__task": "Gathering Facts",
                     "__task_action": "gather_facts",
-                    "duration": 2.078789,
-                    "end": "2024-11-15T08:43:47.991479",
+                    "duration": 2.324646,
+                    "end": "2024-11-18T06:53:18.932822",
                     "event_loop": null,
                     "host": "workstation",
                     "play": "ansible tasks",
                     "play_pattern": "workstation",
-                    "play_uuid": "da0a755c-8f6f-ac24-ef81-00000000000b",
+                    "play_uuid": "b6e6f803-5365-1704-10a6-00000000000b",
                     "playbook": "/home/student/task/d2.yml",
-                    "playbook_uuid": "066d2742-8a7d-425b-b2d1-96a484c1e34b",
+                    "playbook_uuid": "bfc487b0-6926-44eb-b3e5-60e433fd1acf",
                     "remote_addr": "workstation",
                     "res": {
                         "_ansible_no_log": null,
                         "_ansible_verbose_override": true,
                         "ansible_facts": {
                             "ansible_all_ipv4_addresses": [
-                                "10.88.0.1",
-                                "172.25.250.9"
+                                "172.25.250.9",
+                                "10.88.0.1"
                             ],
                             "ansible_all_ipv6_addresses": [
-                                "fe80::f881:3dff:fef3:68c3",
-                                "fe80::607a:95ff:fe21:883d",
-                                "fe80::5054:ff:fe00:fa09"
+                                "fe80::5054:ff:fe00:fa09",
+                                "fe80::b435:a5ff:fe77:2a28",
+                                "fe80::e8a7:39ff:fe76:5bcd"
                             ],
                             "ansible_apparmor": {
                                 "status": "disabled"
@@ -66,25 +66,25 @@
                                 "root": "UUID=fb535add-9799-4a27-b8bc-e8259f39a767"
                             },
                             "ansible_date_time": {
-                                "date": "2024-11-15",
-                                "day": "15",
-                                "epoch": "1731660227",
-                                "epoch_int": "1731660227",
-                                "hour": "03",
-                                "iso8601": "2024-11-15T08:43:47Z",
-                                "iso8601_basic": "20241115T034347453189",
-                                "iso8601_basic_short": "20241115T034347",
-                                "iso8601_micro": "2024-11-15T08:43:47.453189Z",
-                                "minute": "43",
+                                "date": "2024-11-18",
+                                "day": "18",
+                                "epoch": "1731912798",
+                                "epoch_int": "1731912798",
+                                "hour": "01",
+                                "iso8601": "2024-11-18T06:53:18Z",
+                                "iso8601_basic": "20241118T015318021380",
+                                "iso8601_basic_short": "20241118T015318",
+                                "iso8601_micro": "2024-11-18T06:53:18.021380Z",
+                                "minute": "53",
                                 "month": "11",
-                                "second": "47",
-                                "time": "03:43:47",
+                                "second": "18",
+                                "time": "01:53:18",
                                 "tz": "EST",
                                 "tz_dst": "EDT",
                                 "tz_offset": "-0500",
-                                "weekday": "Friday",
-                                "weekday_number": "5",
-                                "weeknumber": "46",
+                                "weekday": "Monday",
+                                "weekday_number": "1",
+                                "weeknumber": "47",
                                 "year": "2024"
                             },
                             "ansible_default_ipv4": {
@@ -138,7 +138,7 @@
                                 "masters": {},
                                 "uuids": {
                                     "sr0": [
-                                        "2024-11-15-05-33-51-00"
+                                        "2024-11-18-04-52-24-00"
                                     ],
                                     "vda2": [
                                         "7B77-95E7"
@@ -166,7 +166,7 @@
                                         ],
                                         "masters": [],
                                         "uuids": [
-                                            "2024-11-15-05-33-51-00"
+                                            "2024-11-18-04-52-24-00"
                                         ]
                                     },
                                     "model": "QEMU DVD-ROM",
@@ -407,8 +407,8 @@
                             "ansible_interfaces": [
                                 "lo",
                                 "eth0",
-                                "vethe2cf8f7d",
-                                "podman0"
+                                "podman0",
+                                "vethbc12c474"
                             ],
                             "ansible_is_chroot": false,
                             "ansible_iscsi_iqn": "",
@@ -518,16 +518,16 @@
                             },
                             "ansible_machine": "x86_64",
                             "ansible_machine_id": "9caf7f61d10b428ba0eed05e2070009b",
-                            "ansible_memfree_mb": 3506,
+                            "ansible_memfree_mb": 3948,
                             "ansible_memory_mb": {
                                 "nocache": {
-                                    "free": 4261,
-                                    "used": 1407
+                                    "free": 4719,
+                                    "used": 949
                                 },
                                 "real": {
-                                    "free": 3506,
+                                    "free": 3948,
                                     "total": 5668,
-                                    "used": 2162
+                                    "used": 1720
                                 },
                                 "swap": {
                                     "cached": 0,
@@ -539,18 +539,18 @@
                             "ansible_memtotal_mb": 5668,
                             "ansible_mounts": [
                                 {
-                                    "block_available": 3075631,
+                                    "block_available": 3076030,
                                     "block_size": 4096,
                                     "block_total": 5060603,
-                                    "block_used": 1984972,
+                                    "block_used": 1984573,
                                     "device": "/dev/vda4",
                                     "fstype": "xfs",
-                                    "inode_available": 9834060,
+                                    "inode_available": 9834120,
                                     "inode_total": 10126272,
-                                    "inode_used": 292212,
+                                    "inode_used": 292152,
                                     "mount": "/",
                                     "options": "rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota",
-                                    "size_available": 12597784576,
+                                    "size_available": 12599418880,
                                     "size_total": 20728229888,
                                     "uuid": "fb535add-9799-4a27-b8bc-e8259f39a767"
                                 },
@@ -600,21 +600,21 @@
                                     "options": "ro,relatime,nojoliet,check=s,map=n,blocksize=2048",
                                     "size_available": 0,
                                     "size_total": 548864,
-                                    "uuid": "2024-11-15-05-33-51-00"
+                                    "uuid": "2024-11-18-04-52-24-00"
                                 },
                                 {
-                                    "block_available": 3075631,
+                                    "block_available": 3076030,
                                     "block_size": 4096,
                                     "block_total": 5060603,
-                                    "block_used": 1984972,
+                                    "block_used": 1984573,
                                     "device": "/dev/vda4",
                                     "fstype": "xfs",
-                                    "inode_available": 9834060,
+                                    "inode_available": 9834120,
                                     "inode_total": 10126272,
-                                    "inode_used": 292212,
+                                    "inode_used": 292152,
                                     "mount": "/var/lib/containers/storage/overlay",
                                     "options": "rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota,bind",
-                                    "size_available": 12597784576,
+                                    "size_available": 12599418880,
                                     "size_total": 20728229888,
                                     "uuid": "fb535add-9799-4a27-b8bc-e8259f39a767"
                                 }
@@ -693,9 +693,9 @@
                                     "vlan_challenged": "off [fixed]"
                                 },
                                 "hw_timestamp_filters": [],
-                                "id": "8000.fa813df368c3",
+                                "id": "8000.b635a5772a28",
                                 "interfaces": [
-                                    "vethe2cf8f7d"
+                                    "vethbc12c474"
                                 ],
                                 "ipv4": {
                                     "address": "10.88.0.1",
@@ -706,12 +706,12 @@
                                 },
                                 "ipv6": [
                                     {
-                                        "address": "fe80::607a:95ff:fe21:883d",
+                                        "address": "fe80::e8a7:39ff:fe76:5bcd",
                                         "prefix": "64",
                                         "scope": "link"
                                     }
                                 ],
-                                "macaddress": "fa:81:3d:f3:68:c3",
+                                "macaddress": "b6:35:a5:77:2a:28",
                                 "mtu": 1500,
                                 "promisc": false,
                                 "speed": 10000,
@@ -750,8 +750,8 @@
                             "ansible_processor_threads_per_core": 1,
                             "ansible_processor_vcpus": 4,
                             "ansible_product_name": "OpenStack Compute",
-                            "ansible_product_serial": "23bd05c8-4a49-4ef0-99ac-d78120d48724",
-                            "ansible_product_uuid": "23bd05c8-4a49-4ef0-99ac-d78120d48724",
+                            "ansible_product_serial": "e3fc81e3-7372-47b1-ab20-8f21be97e302",
+                            "ansible_product_uuid": "e3fc81e3-7372-47b1-ab20-8f21be97e302",
                             "ansible_product_version": "20.6.2-2.20221005185231.6786e96.el8ost",
                             "ansible_python": {
                                 "executable": "/usr/bin/python3",
@@ -784,11 +784,11 @@
                             },
                             "ansible_selinux_python_present": true,
                             "ansible_service_mgr": "systemd",
-                            "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCjcGiwdDizcLHUAwqa+CJQFH9ARh5qo3UkbI1U0hD8HazMIRZ/FFVJuHzhbk1JK0J68dhW0ashtkNsELn4BJP4=",
+                            "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmSAYswMcOSYFBEoOxv+0zCw85BiLjM75PZFkbyedkRrl04aDWyA8NyEkjgdbkPt+my3jZCinM0ihWAc2wYLMM=",
                             "ansible_ssh_host_key_ecdsa_public_keytype": "ecdsa-sha2-nistp256",
-                            "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIFpo6luu6F4jCxiIEkSUxsRZeEsDXMIM6YIae/BjAN4l",
+                            "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIPQwOYwZUH6wbnQHOhUTujS2gZai72DdsOM07jGgaq0I",
                             "ansible_ssh_host_key_ed25519_public_keytype": "ssh-ed25519",
-                            "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQCl7kHGpbo3RbbLw6Lao4W3MTxds06d03q/qVJvYa1P81vcveJy67jYHSv/jnAbNk9Z9LRaNnQ5Kt8dVA0zUBkvyM8XXy9koGMoQqmWN9waaYLf0RFi8MaqdwBRdW+11hRPmx9Npn/Qkrc49rt7TaAdduPDtquAttQtMGwddY1FFfocm+PckXL0N28rr9/70wQIRfRtaTw52lHt9/cSLH2hDam/eHt8VHvCmee/qWR9TDEXftEKMDAb0IIgSHod2c9aTLxddbL49MJasS0yrcE8sWSp0RZcNfNbfSXSabtDx13XgVnhpSTs5xmpx2GTkEPdR2roqtOEnf3OFFblclZ9WdCKfDMQBJaTi8L9G7gIUpdkkR9KdcX3zrz06gwp6o3Q6xB+V2CQGOvCU2ROPX+w1o+M856zjvhwKsEv8P2WLxaK1kKRTo3ExTnpxV1fQ6zdDAgKw1nD/HcYPrkkf4ymj02lnoylEusLqvN49xt7nJwMebC4KYFzWkPZCBKqW6M=",
+                            "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQDa1cFy2V9ZtHR/TBJSoyzW8yUfotN/EMqLJ+h6jvPr5HeH+aFb8vu+WLSVWjt3ffHnuUGu/0DgBt2jyQ7IoXckKq4Tr4nKbvf3q5Y9SFgHheBZruH6X0Z7g1O3gwESOpufAJWtfscw5pOdAa3fLD48r0z7Vev0BJhOzgGJNZANYyIKKs7ZUmw01IHENXXz0SS4Gtdd+fjhxkYEc8puPBZF8+Oh5ncg1uvGBJbWkwtQ4m45ARCiOuHA7lEg70fiRAtYMp6qSsVlfPxoPvUKZJieeMhpsnTOQ56gfA8awp4ryfuQBarT61d/+/JpVrIfmTu/X8b1VwNnwH3CE2vbAwmGKFyYrSBcQVeaJA3mCLB7FJxfPM/K4oYsei4EqLAAbz2nvieZ9RIREer0906Z6TcBJHX1NMxPbTqmM2T+mI0IA9v2xSNyMbPK3nslFgQikn7+ndp6J/C0gCp6+ZSy8Kp9XSxuvrh3eS5buZfiptTOoLuIrTNlw6r5IN+2DAsAOH8=",
                             "ansible_ssh_host_key_rsa_public_keytype": "ssh-rsa",
                             "ansible_swapfree_mb": 0,
                             "ansible_swaptotal_mb": 0,
@@ -796,7 +796,7 @@
                             "ansible_system_capabilities": [],
                             "ansible_system_capabilities_enforced": "False",
                             "ansible_system_vendor": "Red Hat",
-                            "ansible_uptime_seconds": 11380,
+                            "ansible_uptime_seconds": 7240,
                             "ansible_user_dir": "/root",
                             "ansible_user_gecos": "root",
                             "ansible_user_gid": 0,
@@ -805,9 +805,9 @@
                             "ansible_user_uid": 0,
                             "ansible_userspace_architecture": "x86_64",
                             "ansible_userspace_bits": "64",
-                            "ansible_vethe2cf8f7d": {
+                            "ansible_vethbc12c474": {
                                 "active": true,
-                                "device": "vethe2cf8f7d",
+                                "device": "vethbc12c474",
                                 "features": {
                                     "esp_hw_offload": "off [fixed]",
                                     "esp_tx_csum_hw_offload": "off [fixed]",
@@ -878,12 +878,12 @@
                                 "hw_timestamp_filters": [],
                                 "ipv6": [
                                     {
-                                        "address": "fe80::f881:3dff:fef3:68c3",
+                                        "address": "fe80::b435:a5ff:fe77:2a28",
                                         "prefix": "64",
                                         "scope": "link"
                                     }
                                 ],
-                                "macaddress": "fa:81:3d:f3:68:c3",
+                                "macaddress": "b6:35:a5:77:2a:28",
                                 "mtu": 1500,
                                 "promisc": true,
                                 "speed": 10000,
@@ -909,13 +909,13 @@
                         "warnings": []
                     },
                     "resolved_action": "ansible.builtin.gather_facts",
-                    "start": "2024-11-15T08:43:45.912690",
+                    "start": "2024-11-18T06:53:16.608176",
                     "task": "Gathering Facts",
                     "task_action": "gather_facts",
                     "task_args": "",
                     "task_path": "/home/student/task/d2.yml:2",
-                    "task_uuid": "da0a755c-8f6f-ac24-ef81-000000000018",
-                    "uuid": "1686548b-c3a7-4848-8f4d-6871ee2ca897"
+                    "task_uuid": "b6e6f803-5365-1704-10a6-000000000018",
+                    "uuid": "8dd6255f-fc72-4422-82a0-f0f8921efb5f"
                 },
                 {
                     "__changed": false,
@@ -925,15 +925,15 @@
                     "__result": "Ok",
                     "__task": "creating temporary directory on workstation",
                     "__task_action": "ansible.builtin.file",
-                    "duration": 0.711635,
-                    "end": "2024-11-15T08:43:48.727212",
+                    "duration": 0.705302,
+                    "end": "2024-11-18T06:53:19.663414",
                     "event_loop": null,
                     "host": "workstation",
                     "play": "ansible tasks",
                     "play_pattern": "workstation",
-                    "play_uuid": "da0a755c-8f6f-ac24-ef81-00000000000b",
+                    "play_uuid": "b6e6f803-5365-1704-10a6-00000000000b",
                     "playbook": "/home/student/task/d2.yml",
-                    "playbook_uuid": "066d2742-8a7d-425b-b2d1-96a484c1e34b",
+                    "playbook_uuid": "bfc487b0-6926-44eb-b3e5-60e433fd1acf",
                     "remote_addr": "workstation",
                     "res": {
                         "_ansible_no_log": null,
@@ -982,13 +982,13 @@
                         "uid": 1000
                     },
                     "resolved_action": "ansible.builtin.file",
-                    "start": "2024-11-15T08:43:48.015577",
+                    "start": "2024-11-18T06:53:18.958112",
                     "task": "creating temporary directory on workstation",
                     "task_action": "ansible.builtin.file",
                     "task_args": "",
                     "task_path": "/home/student/task/d2.yml:12",
-                    "task_uuid": "da0a755c-8f6f-ac24-ef81-00000000000d",
-                    "uuid": "43b61a88-abcf-437b-8446-39c80b237dcd"
+                    "task_uuid": "b6e6f803-5365-1704-10a6-00000000000d",
+                    "uuid": "86744b70-2854-4dfd-9de7-c47d31f9f84a"
                 },
                 {
                     "__changed": true,
@@ -998,15 +998,15 @@
                     "__result": "Ok",
                     "__task": "listing files in the source folder on bastion",
                     "__task_action": "ansible.builtin.command",
-                    "duration": 1.027036,
-                    "end": "2024-11-15T08:43:49.778486",
+                    "duration": 0.862162,
+                    "end": "2024-11-18T06:53:20.546337",
                     "event_loop": null,
                     "host": "workstation",
                     "play": "ansible tasks",
                     "play_pattern": "workstation",
-                    "play_uuid": "da0a755c-8f6f-ac24-ef81-00000000000b",
+                    "play_uuid": "b6e6f803-5365-1704-10a6-00000000000b",
                     "playbook": "/home/student/task/d2.yml",
-                    "playbook_uuid": "066d2742-8a7d-425b-b2d1-96a484c1e34b",
+                    "playbook_uuid": "bfc487b0-6926-44eb-b3e5-60e433fd1acf",
                     "remote_addr": "workstation",
                     "res": {
                         "_ansible_delegated_vars": {
@@ -1020,8 +1020,8 @@
                             "ls",
                             "/home/student/temp"
                         ],
-                        "delta": "0:00:00.004074",
-                        "end": "2024-11-15 03:43:49.729182",
+                        "delta": "0:00:00.003721",
+                        "end": "2024-11-18 01:53:20.501623",
                         "invocation": {
                             "module_args": {
                                 "_raw_params": "ls /home/student/temp",
@@ -1039,7 +1039,7 @@
                         },
                         "msg": "",
                         "rc": 0,
-                        "start": "2024-11-15 03:43:49.725108",
+                        "start": "2024-11-18 01:53:20.497902",
                         "stderr": "",
                         "stderr_lines": [],
                         "stdout": "a1.exe\na.exe\nmfile.txt\nmyfile.txt",
@@ -1051,13 +1051,13 @@
                         ]
                     },
                     "resolved_action": "ansible.builtin.command",
-                    "start": "2024-11-15T08:43:48.751450",
+                    "start": "2024-11-18T06:53:19.684175",
                     "task": "listing files in the source folder on bastion",
                     "task_action": "ansible.builtin.command",
                     "task_args": "",
                     "task_path": "/home/student/task/d2.yml:16",
-                    "task_uuid": "da0a755c-8f6f-ac24-ef81-00000000000e",
-                    "uuid": "e5bcd636-e0ca-48a5-9fb4-732cd724dfd1"
+                    "task_uuid": "b6e6f803-5365-1704-10a6-00000000000e",
+                    "uuid": "009cb77f-c6e9-460a-81f6-3edb87d3919c"
                 },
                 {
                     "__changed": true,
@@ -1067,15 +1067,15 @@
                     "__result": "Ok",
                     "__task": "fetching files from bastion to workstation",
                     "__task_action": "ansible.builtin.fetch",
-                    "duration": 1.776704,
-                    "end": "2024-11-15T08:43:51.582663",
+                    "duration": 1.712194,
+                    "end": "2024-11-18T06:53:22.281798",
                     "event_loop": null,
                     "host": "workstation",
                     "play": "ansible tasks",
                     "play_pattern": "workstation",
-                    "play_uuid": "da0a755c-8f6f-ac24-ef81-00000000000b",
+                    "play_uuid": "b6e6f803-5365-1704-10a6-00000000000b",
                     "playbook": "/home/student/task/d2.yml",
-                    "playbook_uuid": "066d2742-8a7d-425b-b2d1-96a484c1e34b",
+                    "playbook_uuid": "bfc487b0-6926-44eb-b3e5-60e433fd1acf",
                     "remote_addr": "workstation",
                     "res": {
                         "changed": true,
@@ -1136,13 +1136,13 @@
                         ]
                     },
                     "resolved_action": "ansible.builtin.fetch",
-                    "start": "2024-11-15T08:43:49.805959",
+                    "start": "2024-11-18T06:53:20.569604",
                     "task": "fetching files from bastion to workstation",
                     "task_action": "ansible.builtin.fetch",
                     "task_args": "",
                     "task_path": "/home/student/task/d2.yml:21",
-                    "task_uuid": "da0a755c-8f6f-ac24-ef81-00000000000f",
-                    "uuid": "c3f25b05-ea61-4c7a-8e71-ec2913cb97c3"
+                    "task_uuid": "b6e6f803-5365-1704-10a6-00000000000f",
+                    "uuid": "6957c55c-b982-4bc6-bf46-59be9c0e0081"
                 },
                 {
                     "__changed": false,
@@ -1152,15 +1152,15 @@
                     "__result": "Ok",
                     "__task": "uploading files to all servers",
                     "__task_action": "ansible.builtin.copy",
-                    "duration": 13.24221,
-                    "end": "2024-11-15T08:44:04.918092",
+                    "duration": 12.862411,
+                    "end": "2024-11-18T06:53:35.214065",
                     "event_loop": null,
                     "host": "workstation",
                     "play": "ansible tasks",
                     "play_pattern": "workstation",
-                    "play_uuid": "da0a755c-8f6f-ac24-ef81-00000000000b",
+                    "play_uuid": "b6e6f803-5365-1704-10a6-00000000000b",
                     "playbook": "/home/student/task/d2.yml",
-                    "playbook_uuid": "066d2742-8a7d-425b-b2d1-96a484c1e34b",
+                    "playbook_uuid": "bfc487b0-6926-44eb-b3e5-60e433fd1acf",
                     "remote_addr": "workstation",
                     "res": {
                         "changed": false,
@@ -2113,16 +2113,16 @@
                         ]
                     },
                     "resolved_action": "ansible.builtin.copy",
-                    "start": "2024-11-15T08:43:51.675882",
+                    "start": "2024-11-18T06:53:22.351654",
                     "task": "uploading files to all servers",
                     "task_action": "ansible.builtin.copy",
                     "task_args": "",
                     "task_path": "/home/student/task/d2.yml:39",
-                    "task_uuid": "da0a755c-8f6f-ac24-ef81-000000000012",
-                    "uuid": "eb6001f2-fc32-4538-a0ee-c1a2eb904e04"
+                    "task_uuid": "b6e6f803-5365-1704-10a6-000000000012",
+                    "uuid": "76558cab-12ef-44cd-a664-d519ca29f372"
                 }
             ],
-            "uuid": "da0a755c-8f6f-ac24-ef81-00000000000b"
+            "uuid": "b6e6f803-5365-1704-10a6-00000000000b"
         }
     ],
     "settings_entries": {
@@ -2253,8 +2253,8 @@
     "status": "successful",
     "status_color": 10,
     "stdout": [
-        "\u001b[1;35m[WARNING]: Found both group and host with same name: bastion\u001b[0m",
         "\u001b[1;35m[WARNING]: Found both group and host with same name: workstation\u001b[0m",
+        "\u001b[1;35m[WARNING]: Found both group and host with same name: bastion\u001b[0m",
         "",
         "PLAY [ansible tasks] ***********************************************************",
         "",

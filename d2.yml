@@ -42,7 +42,7 @@
             dest: "/home/student/{{ item }}"
             force: yes  
           delegate_to: "{{ server }}"
-          loop: "{{ groups['servers'] | product(file_list.stdout_lines) | map('flatten') }}"
+          loop: "{{ groups['servers'] | product(file_list.stdout_lines) }}"
           loop_control:
             loop_var: "server_file"
           vars:
